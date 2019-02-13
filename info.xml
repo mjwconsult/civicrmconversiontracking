@@ -1,26 +1,26 @@
 <?xml version="1.0"?>
 <extension key="vitiligodonatetracking" type="module">
   <file>vitiligodonatetracking</file>
-  <name>FIXME</name>
-  <description>FIXME</description>
+  <name>Vitiligo Society Donate Tracking</name>
+  <description>Sends custom events to Google and Facebook trackers from the thank you page of the donate form.</description>
   <license>AGPL-3.0</license>
   <maintainer>
     <author>Rich Lott / Artful Robot</author>
     <email>forums@artfulrobot.uk</email>
   </maintainer>
   <urls>
-    <url desc="Main Extension Page">http://FIXME</url>
-    <url desc="Documentation">http://FIXME</url>
-    <url desc="Support">http://FIXME</url>
+    <url desc="Main Extension Page">https://github.com/vitiligosociety/vitiligodonatetracking</url>
+    <url desc="Documentation">https://github.com/vitiligosociety/vitiligodonatetracking</url>
+    <url desc="Support">https://github.com/vitiligosociety/vitiligodonatetracking</url>
     <url desc="Licensing">http://www.gnu.org/licenses/agpl-3.0.html</url>
   </urls>
   <releaseDate>2019-02-13</releaseDate>
   <version>1.0</version>
-  <develStage>alpha</develStage>
+  <develStage>stable</develStage>
   <compatibility>
-    <ver>4.7</ver>
+    <ver>5.0</ver>
   </compatibility>
-  <comments>This is a new, undeveloped module</comments>
+  <comments>This is custom code that is only relevant to Vitiligo Society.</comments>
   <civix>
     <namespace>CRM/Vitiligodonatetracking</namespace>
   </civix>
