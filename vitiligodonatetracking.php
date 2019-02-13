@@ -134,30 +134,30 @@ function vitiligodonatetracking_civicrm_entityTypes(&$entityTypes) {
   _vitiligodonatetracking_civix_civicrm_entityTypes($entityTypes);
 }
 
-// --- Functions below this ship commented out. Uncomment as required. ---
+
 
 /**
- * Implements hook_civicrm_preProcess().
  *
- * @link http://wiki.civicrm.org/confluence/display/CRMDOC/hook_civicrm_preProcess
- *
-function vitiligodonatetracking_civicrm_preProcess($formName, &$form) {
+ */
+function vitiligodonatetracking_civicrm_buildForm($formName, &$form) {
+  if ($formName == 'CRM_Contribute_Form_Contribution_ThankYou') {
 
-} // */
+		// Check for Do Not Track and do nothing if it's set.
+    if (isset($_SERVER['HTTP_DNT']) && $_SERVER['HTTP_DNT'] == 1) {
+      return;
+    }
 
-/**
- * Implements hook_civicrm_navigationMenu().
- *
- * @link http://wiki.civicrm.org/confluence/display/CRMDOC/hook_civicrm_navigationMenu
- *
-function vitiligodonatetracking_civicrm_navigationMenu(&$menu) {
-  _vitiligodonatetracking_civix_insert_navigation_menu($menu, 'Mailings', array(
-    'label' => E::ts('New subliminal message'),
-    'name' => 'mailing_subliminal_message',
-    'url' => 'civicrm/mailing/subliminal',
-    'permission' => 'access CiviMail',
-    'operator' => 'OR',
-    'separator' => 0,
-  ));
-  _vitiligodonatetracking_civix_navigationMenu($menu);
-} // */
+    // VITILIGO_MEMBERSHIP_FORM_ID = '1'; VITILIGO_DONATION_FORM_ID   = '2';
+    CRM_Core_Resources::singleton()->addVars('VitiligoDonateTracking', [
+      'totalAmount'  => $form->_amount,
+      'trxnId'       => $form->_trxnId,
+      'formId'       => $form->_id,
+      'contribType'  => ($form->_id == 1) ? 'Membership' : 'Donate',
+    ]);
+
+    $r = CRM_Core_Resources::singleton();
+    $r->addScriptFile('vitiligodonatetracking', 'js/vitiligodonatetracking.js');
+    $r->addScript('vitiligoTracking();');
+  }
+}
+
