@@ -1,8 +1,8 @@
 <?xml version="1.0"?>
 <extension key="vitiligodonatetracking" type="module">
   <file>vitiligodonatetracking</file>
-  <name>Vitiligo Society Donate Tracking</name>
-  <description>Sends custom events to Google and Facebook trackers from the thank you page of the donate form.</description>
+  <name>CiviCRM Conversion Tracking</name>
+  <description>Custom extension for the Vitiligo Society Sends custom events to Google and Facebook trackers from the thank you page of the donate form.</description>
   <license>AGPL-3.0</license>
   <maintainer>
     <author>Rich Lott / Artful Robot</author>
