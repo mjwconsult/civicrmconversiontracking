@@ -14,7 +14,7 @@ function vitiligoTracking() {
     fbq('track', 'Purchase', { value: totalAmount, currency: 'GBP', content_name: formId, content_type: contribType });
   }
   else {
-    console.warn("Did not fire google tracking event as fbq() not available.");
+    console.warn("Did not fire facebook tracking event as fbq() not available.");
   }
 
   // Google Analytics events
@@ -29,6 +29,7 @@ function vitiligoTracking() {
       'revenue': totalAmount, // Grand Total.
     });
     ga('ecommerce:send');
+    // Expect to see a call to https://www.google-analytics.com/collect
   }
   else {
     console.warn("Did not fire google tracking event as ga() not available.");

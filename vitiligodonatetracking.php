@@ -140,10 +140,14 @@ function vitiligodonatetracking_civicrm_entityTypes(&$entityTypes) {
  *
  */
 function vitiligodonatetracking_civicrm_buildForm($formName, &$form) {
+  Civi::log()->info(__FUNCTION__ . " called with form '$formName'");
   if ($formName == 'CRM_Contribute_Form_Contribution_ThankYou') {
+
+    $r = CRM_Core_Resources::singleton();
 
 		// Check for Do Not Track and do nothing if it's set.
     if (isset($_SERVER['HTTP_DNT']) && $_SERVER['HTTP_DNT'] == 1) {
+      $r->addScript('console.log("Do Not Track enabled, respecting this and not recording payment with Google Analytics.");');
       return;
     }
 
@@ -155,9 +159,8 @@ function vitiligodonatetracking_civicrm_buildForm($formName, &$form) {
       'contribType'  => ($form->_id == 1) ? 'Membership' : 'Donate',
     ]);
 
-    $r = CRM_Core_Resources::singleton();
     $r->addScriptFile('vitiligodonatetracking', 'js/vitiligodonatetracking.js');
-    $r->addScript('vitiligoTracking();');
+    $r->addScript('CRM.$(vitiligoTracking);');
   }
 }
 
