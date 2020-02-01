@@ -3,6 +3,8 @@
 - Submit google and facebook tracking events from the Thank You page of donations
 and memberships.
 
+- The extension assumes you already have Google Analytics and/or Facebook already configured on your website with tracking IDs/code. The extension submits donation/membership completion events by calling those platforms' APIs them.
+
 - If browser's Do Not Track option is set, respect this.
 
 The extension is licensed under [AGPL-3.0](LICENSE.txt).
