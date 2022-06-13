@@ -14,14 +14,15 @@
     <url desc="Support">https://github.com/vitiligosociety/vitiligodonatetracking</url>
     <url desc="Licensing">http://www.gnu.org/licenses/agpl-3.0.html</url>
   </urls>
-  <releaseDate>2019-02-13</releaseDate>
-  <version>1.0</version>
+  <releaseDate>2022-06-13</releaseDate>
+  <version>1.0.1</version>
   <develStage>stable</develStage>
   <compatibility>
-    <ver>5.0</ver>
+    <ver>5.49</ver>
   </compatibility>
   <comments>This is custom code that is only relevant to Vitiligo Society.</comments>
   <civix>
     <namespace>CRM/Vitiligodonatetracking</namespace>
+    <format>22.05.2</format>
   </civix>
 </extension>
