@@ -81,7 +81,7 @@ function vitiligodonatetracking_civicrm_entityTypes(&$entityTypes) {
  *
  */
 function vitiligodonatetracking_civicrm_buildForm($formName, &$form) {
-  Civi::log()->info(__FUNCTION__ . " called with form '$formName'");
+  // Civi::log()->info(__FUNCTION__ . " called with form '$formName'");
   if ($formName == 'CRM_Contribute_Form_Contribution_ThankYou') {
 
     $r = CRM_Core_Resources::singleton();
